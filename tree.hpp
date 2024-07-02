@@ -218,7 +218,8 @@ public:
      *            Defaults to std::cout.
      * @throws std::runtime_error if the tree is empty.
      */
-    void myHeap(ostream &out = std::cout)
+    class MinHeapIterator; 
+    MinHeapIterator myHeap(ostream &out = std::cout)
     {
         if (!root)
         {
@@ -234,6 +235,7 @@ public:
             out << " ";
             ++it;
         }
+        return MinHeapIterator(root);
     }
 
     class DFSIterator
